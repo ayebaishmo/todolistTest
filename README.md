@@ -2,7 +2,7 @@
 
 > An application that helps one to create daily tasks for easy remeberance.
 
-![screenshot](./screenshot.PNG)
+![screenshot](./src/img/screenshot.PNG)
 
 The app will have features like adding, deleting, editing task 
 
