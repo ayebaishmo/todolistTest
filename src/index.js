@@ -14,16 +14,20 @@ const tasks = [
     }
 ];
 
-const listTasks = document.querySelector('.listTasks');
 
-for (let i = 0; i < tasks.length; i += 1) {
-    const listItem = document.createElement('li');
-    const input = document.createElement('input');
-    input.setAttribute('type', 'checkbox');
-    listItem.appendChild(input);
-    const label = document.createElement('label');
-    listItem.appendChild(label);
-    label.textContent = tasks[i].description;
-    listTasks.appendChild(listItem);
+const displayTasks = () => {
+    const listTasks = document.querySelector('.listTasks');
+    for (let i = 0; i < tasks.length; i += 1) {
+        const listItem = document.createElement('li');
+        const input = document.createElement('input');
+        input.setAttribute('type', 'checkbox');
+        listItem.appendChild(input);
+        const label = document.createElement('label');
+        listItem.appendChild(label);
+        label.textContent = tasks[i].description;
+        listTasks.appendChild(listItem);
+    }
 }
+
+window.onload = displayTasks;
 
