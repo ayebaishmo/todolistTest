@@ -4,10 +4,12 @@ body {
   justify-content: center;
   background-color: rgb(245, 245, 245);
 }
+
 main {
   width: 40%;
   background-color: white;
 }
+
 ul {
   list-style-type: none;
 }
