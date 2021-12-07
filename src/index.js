@@ -11,6 +11,11 @@ const tasks = [
         description: 'Go to church',
         completed: false,
         index: 2
+    },
+    {
+        description: 'Fellowship with friends',
+        completed: false,
+        index: 3
     }
 ];
 
