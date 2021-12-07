@@ -4,20 +4,19 @@ const tasks = [
   {
     description: 'Wash dishes',
     completed: false,
-    index: 1
+    index: 1,
   },
   {
     description: 'Go to church',
     completed: false,
-    index: 2
+    index: 2,
   },
   {
     description: 'Fellowship with friends',
     completed: false,
-    index: 3
-  }
+    index: 3,
+  },
 ];
-
 
 const displayTasks = () => {
   const listTasks = document.querySelector('.listTasks');
