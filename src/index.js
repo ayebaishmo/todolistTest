@@ -24,12 +24,30 @@ const displayTasks = () => {
     const listItem = document.createElement('li');
     const input = document.createElement('input');
     input.setAttribute('type', 'checkbox');
+    input.setAttribute('class', 'checkboxed');
     listItem.appendChild(input);
     const label = document.createElement('label');
+    label.setAttribute('class', 'label');
     listItem.appendChild(label);
     label.textContent = tasks[i].description;
     listTasks.appendChild(listItem);
   }
 };
 
-window.onload = displayTasks;
+displayTasks();
+
+
+const checkboxed = document.getElementsByClassName('.checkboxed');
+
+checkboxed.addEventListener('change', () => {
+  if(checkboxed.checked) {
+    checkboxed.nextElementSibling.style.textDecoration ='line-through';
+  } else {
+    checkboxed.nextElementSibling.style.textDecoration ='none';
+  }
+});
+
+
+
+
+// window.onload = displayTasks;
