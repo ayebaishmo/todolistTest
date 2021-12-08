@@ -1,6 +1,7 @@
 import { join } from 'lodash';
 import './style.css';
 import { check } from './modules/check';
+// import { storage } from './modules/storage';
 
 export const tasks = [
   {
@@ -19,6 +20,8 @@ export const tasks = [
     index: 3,
   },
 ];
+
+localStorage.setItem('tasks', JSON.stringify(tasks));
 
 const displayTasks = () => {
   const listTasks = document.querySelector('.listTasks');
@@ -39,3 +42,6 @@ const displayTasks = () => {
 
 displayTasks();
 check();
+if (localStorage.length !==0) {
+ tasks = JSON.parse(localStorage.getItem('Tasks'));
+}

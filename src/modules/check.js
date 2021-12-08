@@ -8,10 +8,12 @@ export const check = () => {
         checkboxed[j].nextElementSibling.style.textDecoration = 'line-through';
         tasks[j].completed = true;
         console.log(tasks[j].completed);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       } else {
         checkboxed[j].nextElementSibling.style.textDecoration = 'none';
         tasks[j].completed = false;
         console.log(tasks[j].completed);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       }
     });
   }
