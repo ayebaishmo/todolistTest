@@ -1,3 +1,4 @@
+import { join } from 'lodash';
 import './style.css';
 
 const tasks = [
@@ -37,17 +38,19 @@ const displayTasks = () => {
 displayTasks();
 
 
-const checkboxed = document.getElementsByClassName('.checkboxed');
+const checkboxed = document.getElementsByClassName('checkboxed');
 
-checkboxed.addEventListener('change', () => {
-  if(checkboxed.checked) {
-    checkboxed.nextElementSibling.style.textDecoration ='line-through';
+for (let j = 0; j < checkboxed.length; j++) {
+  
+checkboxed[j].addEventListener('change', () => {
+  if(checkboxed[j].checked) {
+    checkboxed[j].nextElementSibling.style.textDecoration = 'line-through';
   } else {
-    checkboxed.nextElementSibling.style.textDecoration ='none';
+        checkboxed[j].nextElementSibling.style.textDecoration = 'none';
   }
 });
 
-
+}
 
 
 // window.onload = displayTasks;
