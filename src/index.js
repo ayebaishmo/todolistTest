@@ -26,15 +26,12 @@ const displayTasks = () => {
     const input = document.createElement('input');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('class', 'checkboxed');
-    input.setAttribute('id', '${tasks.index}');
+    input.setAttribute('id', `${tasks[i].index}`);
     listItem.appendChild(input);
     const label = document.createElement('label');
-    const label2 = document.createElement('label2');
     label.setAttribute('class', 'label');
     listItem.appendChild(label);
-    listItem.appendChild(label2);
     label.textContent = tasks[i].description;
-    label2.textContent = tasks[i].completed;
     listTasks.appendChild(listItem);
   }
 };
@@ -43,23 +40,16 @@ displayTasks();
 
 
 const checkboxed = document.getElementsByClassName('checkboxed');
-
 for (let j = 0; j < checkboxed.length; j++) {
-  
   checkboxed[j].addEventListener('change', () => {
     if(checkboxed[j].checked) {
       checkboxed[j].nextElementSibling.style.textDecoration = 'line-through';
+      tasks[j].completed = true;
+      console.log(tasks[j].completed);
     } else {
       checkboxed[j].nextElementSibling.style.textDecoration = 'none';
+      tasks[j].completed = false;
+      console.log(tasks[j].completed);
     }
   });
 }
-
-const itemElement = document.getElementById(tasks.index);
-const lab = itemElement.parentElement.querySelector('label');
-if (itemElement.checked) {
-  tasks.completed = true;
-} else {
-  tasks.completed = false;
-}
-// window.onload = displayTasks;
