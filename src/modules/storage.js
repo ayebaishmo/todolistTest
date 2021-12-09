@@ -10,4 +10,4 @@ const storage = (() => {
   return { setLocal, getLocal };
 })();
 
-export default storage
+export default storage;
