@@ -1,4 +1,4 @@
-import * as ls from './local-storage.js';
+import * as ls from './storage.js';
 
 const updateEdit = (inputDiv, label) => {
   const id = inputDiv.classList[2];

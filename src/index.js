@@ -1,5 +1,37 @@
 import './style.css';
-import { status, displayTasks } from './modules/status';
+import * as ls from './storage.js';
+import { documentToDo } from './status.js';
+import * as addRemove from './add-remove.js';
 
-displayTasks();
-status();
+const addIt = document.querySelector('#add-item');
+const removeIt = document.querySelector('#clear');
+const refreshIcon = document.querySelector('.refresh-icon');
+const addIcon = document.querySelector('.add-icon');
+let items = ls.getListData(ls.saveDataLocation);
+
+function refresh() {
+  items = ls.getListData(ls.saveDataLocation);
+  documentToDo(items);
+};
+
+function add() {
+  addRemove.addItem(addIt, items);
+  refresh();
+}
+
+function removeAll() {
+  items = addRemove.removeAll(items);
+  refresh();
+}
+
+window.onload = refresh;
+refreshIcon.addEventListener('click', refresh);
+
+addIcon.addEventListener('click', add);
+addIt.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    add();
+  }
+});
+
+removeIt.addEventListener('click', removeAll);

@@ -1,3 +1,7 @@
+import editStart from './edit.js';
+import * as ls from './storage.js';
+import * as addRemove from './add-remove.js';
+
 export const delItem = (id) => {
   let items = ls.getListData(ls.saveDataLocation);
   const delThis = items.filter((i) => i.index === id)[0];

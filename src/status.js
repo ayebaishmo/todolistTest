@@ -1,4 +1,7 @@
 import { toggleComplete } from './logic.js';
+import { createMenu, delMenu } from './append.js';
+
+let trackDropmenu = 0;
 
 export function defaultList(item, i, items) {
   const frag = document.createDocumentFragment();
@@ -33,6 +36,33 @@ export function defaultList(item, i, items) {
 
   span.innerHTML = '&#8942;';
   span.classList.add('icon', 'options-icon');
+
+  function spanDel() {
+    if (trackDropmenu === 1) {
+      trackDropmenu -= 1;
+      delMenu(spanDiv);
+    }
+    window.removeEventListener('click', spanDel);
+  }
+  span.addEventListener('click', (e) => {
+    if (trackDropmenu === 0) {
+      e.stopPropagation();
+      createMenu(spanDiv, i, items);
+      trackDropmenu += 1;
+    }
+    if (trackDropmenu === 1) {
+      window.addEventListener('click', spanDel);
+    }
+  });
+
+  altSpan.style.display = 'none';
+  altSpan.className = 'altSpan';
+  altSpan.innerHTML = '&#10003;';
+  spanDiv.classList.add('icon-dropmenu');
+
+  return {
+    frag, list, div, check, label, span,
+  };
 }
 
 export const documentToDo = (list) => {
