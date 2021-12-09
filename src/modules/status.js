@@ -1,4 +1,4 @@
-import tasks from '../index.js';
+import tasks from '../index';
 
 const status = () => {
   const checkboxed = document.getElementsByClassName('checkboxed');
