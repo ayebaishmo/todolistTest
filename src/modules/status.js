@@ -14,7 +14,7 @@ const tasks = [
     completed: false,
     index: 3,
   },
-  ];
+];
 
 const displayTasks = () => {
   const listTasks = document.querySelector('.listTasks');
