@@ -1,8 +1,6 @@
 import storage from './storage';
 
-var tasks = [];
-if (localStorage.length === 0) {
-  tasks = [
+const tasks = [
     {
       description: 'Wash dishes',
       completed: false,
@@ -19,9 +17,6 @@ if (localStorage.length === 0) {
       index: 3,
     },
   ];
-} else {
-  tasks = storage.getLocal();
-}
 
 const displayTasks = () => {
   const listTasks = document.querySelector('.listTasks');
