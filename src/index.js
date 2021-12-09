@@ -1,9 +1,9 @@
 import './style.css';
-import { storage } from './modules/storage';
+import storage from './modules/storage';
 
 let tasks = [];
 if (localStorage.length === 0) {
-  const tasks = [
+  tasks = [
     {
       description: 'Wash dishes',
       completed: false,

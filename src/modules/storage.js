@@ -1,4 +1,4 @@
-export const storage = (() => {
+const storage = (() => {
   const setLocal = (tasks) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
@@ -9,3 +9,5 @@ export const storage = (() => {
   };
   return { setLocal, getLocal };
 })();
+
+export default storage
