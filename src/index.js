@@ -1,6 +1,4 @@
-import { join } from 'lodash';
 import './style.css';
-// import { check } from './modules/check';
 import { storage } from './modules/storage';
 
 let tasks = [];
@@ -44,23 +42,20 @@ const displayTasks = () => {
 
 const check = () => {
   const checkboxed = document.getElementsByClassName('checkboxed');
-  for (let j = 0; j < checkboxed.length; j++) {
+  for (let j = 0; j < checkboxed.length; j += 1) {
     checkboxed[j].addEventListener('change', () => {
-      if(checkboxed[j].checked) {
+      if (checkboxed[j].checked) {
         checkboxed[j].nextElementSibling.style.textDecoration = 'line-through';
         tasks[j].completed = true;
-        console.log(tasks[j].completed);
         localStorage.setItem('tasks', JSON.stringify(tasks));
       } else {
         checkboxed[j].nextElementSibling.style.textDecoration = 'none';
         tasks[j].completed = false;
-        console.log(tasks[j].completed);
         localStorage.setItem('tasks', JSON.stringify(tasks));
       }
     });
   }
-}
+};
 
 displayTasks();
 check();
-
