@@ -1,4 +1,4 @@
-import { tasks } from "..";
+import tasks from '../index.js';
 
 const status = () => {
   const checkboxed = document.getElementsByClassName('checkboxed');
@@ -16,5 +16,4 @@ const status = () => {
     });
   }
 };
-
 export  default status;

@@ -1,8 +1,8 @@
 import './style.css';
 import storage from './modules/storage';
-import status from './modules/status';
+import status from './modules/status.js';
 
-export let tasks = [];
+let tasks = [];
 if (localStorage.length === 0) {
   tasks = [
     {
@@ -44,3 +44,4 @@ const displayTasks = () => {
 
 displayTasks();
 status();
+export default tasks;
