@@ -1,21 +1,19 @@
-import storage from './storage';
-
 const tasks = [
-    {
-      description: 'Wash dishes',
-      completed: false,
-      index: 1,
-    },
-    {
-      description: 'Go to church',
-      completed: false,
-      index: 2,
-    },
-    {
-      description: 'Fellowship with friends',
-      completed: false,
-      index: 3,
-    },
+  {
+    description: 'Wash dishes',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Go to church',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'Fellowship with friends',
+    completed: false,
+    index: 3,
+  },
   ];
 
 const displayTasks = () => {
