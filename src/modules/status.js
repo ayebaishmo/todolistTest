@@ -1,5 +1,6 @@
 import storage from './storage';
-let tasks = [];
+
+var tasks = [];
 if (localStorage.length === 0) {
   tasks = [
     {
@@ -55,4 +56,4 @@ const status = () => {
     });
   }
 };
-export { status, displayTasks, tasks }
+export { status, displayTasks, tasks };
