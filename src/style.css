@@ -1,7 +1,10 @@
 body {
   background-color: #f6f6f6;
-  border-top: 2rem solid black;
-  border-bottom: 2rem solid black;
+}
+
+main {
+  margin-left: 350px;
+  margin-right: 350px;
 }
 
 ul {
