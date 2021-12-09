@@ -8,7 +8,23 @@ class Task {
 
   static tasks = [];
 
+  static getDataFromLocalStorage() {
+    if (!window.localStorage.getItem('tasksData')) return null;
+      const data = JSON.parse(window.localStorage.getItem('tasksData'));
+      data.myTasks = data.mmyBooks.map((b) => {
+          const task = new Task(b.description, b.completed, b.index);
+          return task;
+      });
+      Task.tasks = data.myTasks;
+      return data;
+  }
+
+  static setDataInLocalStorage(data) {
+    window.localStorage.setItem('tasksData', JSON.stringify(data));
+  }
+
   static displayTasks() {
+    const tasks = Task.getDataFromLocalStorage();
     Task.tasks.forEach((task) => {
       const listItem = document.createElement('li');
       const input = document.createElement('input');
@@ -22,6 +38,15 @@ class Task {
       label.textContent = task.description;
       listTasks.appendChild(listItem);
     });
+  }
+  addTask() {
+      this.index = tasks.taskCount + 1;
+      tasks.myTasks.push(this);
+      tasks.taskCount +=1;
+      Task.setDataInLocalStorage(tasks);
+      Task.displayTasks();
+      description.value = '';
+      completed.value = false;
   }
 }
 
