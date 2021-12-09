@@ -1,8 +1,8 @@
 import './style.css';
 import storage from './modules/storage';
-import status from './modules/status.js';
+import status from './modules/status';
 
-let tasks = [];
+const tasks = [];
 if (localStorage.length === 0) {
   tasks = [
     {
