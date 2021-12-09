@@ -1,13 +1,14 @@
-const storage = (() => {
-  const setLocal = (tasks) => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  };
+export const saveDataLocation = 'myLocalToDo';
 
-  const getLocal = () => {
-    const localData = JSON.parse(localStorage.getItem('tasks'));
-    return localData;
-  };
-  return { setLocal, getLocal };
-})();
+export const saveListData = (data, location) => {
+  localStorage.setItem(location, JSON.stringify(data));
+  return data;
+};
 
-export default storage;
+export const getListData = (location) => {
+  if (localStorage.getItem(location)) {
+    const data = JSON.parse(localStorage.getItem(location));
+    return data;
+  }
+  return [];
+};
