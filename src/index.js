@@ -5,23 +5,23 @@ import { storage } from './modules/storage';
 
 let tasks = [];
 if (localStorage.length === 0) {
- const tasks = [
-  {
-    description: 'Wash dishes',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go to church',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Fellowship with friends',
-    completed: false,
-    index: 3,
-  },
-];
+  const tasks = [
+    {
+      description: 'Wash dishes',
+      completed: false,
+      index: 1,
+    },
+    {
+      description: 'Go to church',
+      completed: false,
+      index: 2,
+    },
+    {
+      description: 'Fellowship with friends',
+      completed: false,
+      index: 3,
+    },
+  ];
 } else {
   tasks = storage.getLocal();
 }
@@ -64,9 +64,3 @@ const check = () => {
 displayTasks();
 check();
 
-
-
-if (localStorage.length !==0) {
- const storedTasks = JSON.parse(localStorage.getItem('Tasks'));
- displayTasks(storedTasks);
-}
