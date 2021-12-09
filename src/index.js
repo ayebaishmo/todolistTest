@@ -1,7 +1,8 @@
 import './style.css';
 import storage from './modules/storage';
+import status from './modules/status';
 
-let tasks = [];
+export let tasks = [];
 if (localStorage.length === 0) {
   tasks = [
     {
@@ -23,6 +24,7 @@ if (localStorage.length === 0) {
 } else {
   tasks = storage.getLocal();
 }
+
 const displayTasks = () => {
   const listTasks = document.querySelector('.listTasks');
   for (let i = 0; i < tasks.length; i += 1) {
@@ -40,22 +42,5 @@ const displayTasks = () => {
   }
 };
 
-const check = () => {
-  const checkboxed = document.getElementsByClassName('checkboxed');
-  for (let j = 0; j < checkboxed.length; j += 1) {
-    checkboxed[j].addEventListener('change', () => {
-      if (checkboxed[j].checked) {
-        checkboxed[j].nextElementSibling.style.textDecoration = 'line-through';
-        tasks[j].completed = true;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-      } else {
-        checkboxed[j].nextElementSibling.style.textDecoration = 'none';
-        tasks[j].completed = false;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-      }
-    });
-  }
-};
-
 displayTasks();
-check();
+status();
