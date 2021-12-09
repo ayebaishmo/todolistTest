@@ -14,13 +14,21 @@
 </head>
 <body>
     <main>
-        <p>Today's to do</p>
-        <input type="text" id="inTask" name="inTask" placeholder="Add to your list"></input><i class="arrow fas fa-arrow-right"></i>
-        <ul class="listTasks">
+        <div class="todo wrapper">
+            <ul class="todo headline">
+            <li id="heading">
+                <h2>Today's to do</h2>
+                <span class="icon refresh-icon">&#128472;</span>
+            </li>
+        <li id="subheading">
+            <input type="text" id="add-item" name="inTask" placeholder="Add to your list"></input>
+            <span class="icon add-icon">&#11168;</span>
+        </li>
+        <ul class="todo items">
         </ul>
-        <div class="clearC">
-        <p class="clear">clear all completed</p>
-        </div>
+        <ul class="todo footer">
+        <li id="clear"><span>clear all completed</span> </li>
+        </ul>
     </main>
 </body>
 </html>
