@@ -1,4 +1,4 @@
-import * as ls from './storage.js';
+import * as ls from './storage';
 
 export const itemComplete = (item, items) => {
   item.complete = true;

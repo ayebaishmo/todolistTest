@@ -1,5 +1,5 @@
-import { toggleComplete } from './logic.js';
-import { createMenu, delMenu } from './append.js';
+import { toggleComplete } from './logic';
+import { createMenu, delMenu } from './append';
 
 let trackDropmenu = 0;
 

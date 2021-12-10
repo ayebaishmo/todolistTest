@@ -1,6 +1,6 @@
-import editStart from './edit.js';
-import * as ls from './storage.js';
-import * as addRemove from './add-remove.js';
+import editStart from './edit';
+import * as ls from './storage';
+import * as addRemove from './add-remove';
 
 export const delItem = (id) => {
   let items = ls.getListData(ls.saveDataLocation);

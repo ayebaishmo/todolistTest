@@ -1,7 +1,7 @@
 import './style.css';
-import * as ls from './storage.js';
-import { documentToDo } from './status.js';
-import * as addRemove from './add-remove.js';
+import * as ls from './storage';
+import { documentToDo } from './status';
+import * as addRemove from './add-remove';
 
 const addIt = document.querySelector('#add-item');
 const removeIt = document.querySelector('#clear');
