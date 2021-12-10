@@ -1,4 +1,4 @@
-import * as ls from './storage.js';
+import * as ls from './storage';
 
 const { v4: uuidv4 } = require('uuid');
 

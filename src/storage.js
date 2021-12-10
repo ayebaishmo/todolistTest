@@ -12,4 +12,3 @@ export const getListData = (location) => {
   }
   return [];
 };
-

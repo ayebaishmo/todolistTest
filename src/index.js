@@ -12,7 +12,7 @@ let items = ls.getListData(ls.saveDataLocation);
 function refresh() {
   items = ls.getListData(ls.saveDataLocation);
   documentToDo(items);
-};
+}
 
 function add() {
   addRemove.addItem(addIt, items);
