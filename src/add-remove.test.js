@@ -129,6 +129,3 @@ describe('Remove...', () => {
     expect(document.body.querySelectorAll('li').length).toBe(2);
   });
 }); 
-
-
-
