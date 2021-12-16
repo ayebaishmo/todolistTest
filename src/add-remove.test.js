@@ -1,5 +1,5 @@
-import * as addRemove from './add-remove.js';
-import documentToDo from './status.js';
+import * as addRemove from './add-remove';
+import documentToDo from './status';
 
 jest.mock('./storage');
 jest.mock('./status');
@@ -128,4 +128,4 @@ describe('Remove...', () => {
     documentToDo(newArr);
     expect(document.body.querySelectorAll('li').length).toBe(2);
   });
-}); 
+});
