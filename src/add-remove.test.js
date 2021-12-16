@@ -124,7 +124,7 @@ describe('Remove...', () => {
       complete: true,
       index: 3,
     }];
-    const newArr = addRemove.removeAllCompleted(itemsFull);
+    const newArr = addRemove.removeAll(itemsFull);
     documentToDo(newArr);
     expect(document.body.querySelectorAll('li').length).toBe(2);
   });
