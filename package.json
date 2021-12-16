@@ -4,7 +4,7 @@
   "description": "Web pack template",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/ayebaishmo/webPackT#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
@@ -30,5 +32,13 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "uuid": "^8.3.2"
+  },
+  "main": "webpack.config.js",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "testEnvironment": "jsdom"
   }
 }
