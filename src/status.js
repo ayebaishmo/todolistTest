@@ -1,6 +1,6 @@
 import toggleComplete from './logic';
 import { createMenu, delMenu } from './append';
-import editStart from './edit.js';
+import editStart from './edit';
 
 let trackDropmenu = 0;
 

@@ -5,7 +5,6 @@ import * as ls from './storage';
 jest.mock('./storage');
 jest.mock('./status');
 
-
 describe('Edit...', () => {
   document.body.innerHTML = `
     <ul class="todo items">
@@ -40,4 +39,4 @@ describe('Edit...', () => {
     const newArr = ls.getListData(ls.saveDataLocation);
     expect(newArr[1].complete).toBe(false);
   });
-}); 
+});

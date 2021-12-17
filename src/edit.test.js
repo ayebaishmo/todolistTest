@@ -59,4 +59,4 @@ describe('Edit...', () => {
   test('End Editing First Item - Toggle Icons', () => {
     expect(altIcon.style.display).toBe('none');
   });
-}); 
+});

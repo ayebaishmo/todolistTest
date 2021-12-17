@@ -1,6 +1,5 @@
 import './style.css';
 import * as ls from './storage';
-import { documentToDo } from './status';
 import * as addRemove from './add-remove';
 
 const addIt = document.querySelector('#add-item');
@@ -11,7 +10,6 @@ let items = ls.getListData(ls.saveDataLocation);
 
 function refresh() {
   items = ls.getListData(ls.saveDataLocation);
-  documentToDo(items);
 }
 
 function add() {
