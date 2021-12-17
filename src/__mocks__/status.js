@@ -10,4 +10,4 @@ const documentToDo = (list) => {
   }
 };
 
-export default documentToDo; 
+export default documentToDo;
