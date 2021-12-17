@@ -1,3 +1,10 @@
+import editStart from './edit';
+import documentToDo from './status';
+import * as ls from './storage';
+
+jest.mock('./storage');
+jest.mock('./status');
+
 describe('Edit...', () => {
   document.body.innerHTML = `
     <ul class="todo items">
